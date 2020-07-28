@@ -37,7 +37,7 @@ router.get("/", async (req, res) => {
   } else if (filterType && flavor && !packSize) {
     //filter by product_type and flavor not packSize
     let pods = await Pod.find({
-      $and: [{ $text: { $search: filterType } }, { $text: { $search: flavor } }]
+      $and: [{ $text: { $search: filterType } }, { flavor: flavor }]
     });
     if (pods.length === 0)
       return res.json({
@@ -49,10 +49,7 @@ router.get("/", async (req, res) => {
   } else if (filterType && !flavor && packSize) {
     //filter by product_type and packSize not flavor
     let pods = await Pod.find({
-      $and: [
-        { $text: { $search: filterType } },
-        { $text: { $search: packSize } }
-      ]
+      $and: [{ $text: { $search: filterType } }, { pack_size: packSize }]
     });
     if (pods.length === 0)
       return res.json({
@@ -66,8 +63,8 @@ router.get("/", async (req, res) => {
     let pods = await Pod.find({
       $and: [
         { $text: { $search: filterType } },
-        { $text: { $search: flavor } },
-        { $text: { $search: packSize } }
+        { flavor: flavor },
+        { pack_size: packSize }
       ]
     });
     if (pods.length === 0)

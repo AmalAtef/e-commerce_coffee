@@ -35,7 +35,7 @@ router.get("/", async (req, res) => {
   } else if (filterType && w_line) {
     //filter by product_type and water_line
     let machines = await Machine.find({
-      $and: [{ $text: { $search: filterType }, $text: { $search: w_line } }]
+      $and: [{ $text: { $search: filterType } }, { water_line: w_line }]
     });
     if (machines.length === 0)
       return res.json({
