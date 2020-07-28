@@ -1,0 +1,38 @@
+{
+  "name": "e-commerce_coffee",
+  "version": "1.0.0",
+  "description": "e-commerce_coffee",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^6.5.0",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.18",
+    "mongoose-unique-validator": "^2.0.3",
+    "nodemailer": "^6.4.8",
+    "stripe": "^8.63.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "debug": "nodemon --inspect index.js",
+    "lint": "eslint --init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmalAtef/e-commerce_coffee"
+  },
+  "author": "Amal Atef",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmalAtef/e-commerce_coffee/issues"
+  },
+  "homepage": "https://github.com/AmalAtef/e-commerce_coffee#readme"
+}
